@@ -1,0 +1,13 @@
+predict_review_task:
+  description: >
+    YOU MUST perform the following steps for user {user_id} and item {item_id}:
+    1. USE 'search_user' to summarize this user's preferences and strictness.
+    2. USE 'search_item' to identify the business's features and signature offerings.
+    3. USE 'search_reviews' if needed for more context.
+    4. BASED ON THE ABOVE, predict a star rating (0-5) and synthesize a high-quality review.
+    
+    Output MUST be a JSON object with 'stars' and 'text'. 
+    Example: {{ "stars": 4.5, "text": "I really enjoyed the atmosphere." }}
+  expected_output: >
+    A JSON object containing 'stars' (float) and 'text' (string).
+  agent: yelp_analyst
